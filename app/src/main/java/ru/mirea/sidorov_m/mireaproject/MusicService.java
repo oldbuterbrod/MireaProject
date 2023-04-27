@@ -33,7 +33,7 @@ public class MusicService extends Service {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Текущий трек: Slillet - Moster"))
+                        .bigText("Текущий трек: The Ink Spots — I Don t Want To Set The World On Fire"))
                 .setContentTitle("мой плеер");
 
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Сидоров М.М. Notification", importance);
@@ -42,7 +42,7 @@ public class MusicService extends Service {
         notificationManager.createNotificationChannel(channel);
         startForeground(1, builder.build());
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.monster);
+        mediaPlayer = MediaPlayer.create(this, R.raw.ostfallout);
         mediaPlayer.setLooping(false);
     }
 
