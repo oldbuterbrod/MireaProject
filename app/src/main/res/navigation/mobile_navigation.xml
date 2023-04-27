@@ -16,5 +16,10 @@
         android:name="ru.mirea.sidorov_m.mireaproject.ui.gallery.GalleryFragment"
         android:label="WEB"
         tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_blankFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
 
 </navigation>

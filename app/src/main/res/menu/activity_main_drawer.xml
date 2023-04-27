@@ -12,5 +12,9 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="WEB" />
+        <item
+            android:id="@+id/nav_blankFragment"
+            android:icon="@android:drawable/ic_media_play"
+            android:title="MusicPlayer" />
     </group>
 </menu>
