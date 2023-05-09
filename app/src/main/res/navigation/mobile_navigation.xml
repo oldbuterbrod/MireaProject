@@ -21,5 +21,15 @@
         android:name="ru.mirea.sidorov_m.mireaproject.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/nav_audioFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.AudioFragment"
+        android:label="fragment_audio"
+        tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/nav_cameraFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
 
 </navigation>

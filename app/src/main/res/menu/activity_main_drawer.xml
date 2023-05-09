@@ -16,5 +16,13 @@
             android:id="@+id/nav_blankFragment"
             android:icon="@android:drawable/ic_media_play"
             android:title="MusicPlayer" />
+        <item
+            android:id="@+id/nav_audioFragment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Audio" />
+        <item
+            android:id="@+id/nav_cameraFragment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Camera" />
     </group>
 </menu>
