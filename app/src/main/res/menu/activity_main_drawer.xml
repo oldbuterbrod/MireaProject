@@ -24,5 +24,13 @@
             android:id="@+id/nav_cameraFragment"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Camera" />
+        <item
+            android:id="@+id/nav_profileFragment"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_fileFragment"
+            android:icon="@android:drawable/stat_notify_sdcard"
+            android:title="File" />
     </group>
 </menu>
