@@ -17,6 +17,10 @@
             android:icon="@android:drawable/ic_media_play"
             android:title="MusicPlayer" />
         <item
+            android:id="@+id/nav_mySensorFragment"
+            android:icon="@android:drawable/stat_notify_sdcard"
+            android:title="Ny Sensor" />
+        <item
             android:id="@+id/nav_audioFragment"
             android:icon="@drawable/ic_menu_camera"
             android:title="Audio" />
@@ -32,5 +36,13 @@
             android:id="@+id/nav_fileFragment"
             android:icon="@android:drawable/stat_notify_sdcard"
             android:title="File" />
+        <item
+            android:id="@+id/nav_someFragment"
+            android:icon="@android:drawable/stat_notify_sdcard"
+            android:title="Some" />
+        <item
+            android:id="@+id/nav_bethesdaFragment"
+            android:icon="@android:drawable/stat_notify_sdcard"
+            android:title="Рзаработчики Fallout" />
     </group>
 </menu>

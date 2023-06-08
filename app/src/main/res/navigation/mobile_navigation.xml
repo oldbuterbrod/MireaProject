@@ -41,5 +41,20 @@
         android:name="ru.mirea.sidorov_m.mireaproject.FileFragment"
         android:label="fragment_file"
         tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/nav_someFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.SomeFragment"
+        android:label="fragment_some"
+        tools:layout="@layout/fragment_some" />
+    <fragment
+        android:id="@+id/nav_mySensorFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.MySensorFragment"
+        android:label="fragment_my_sensor"
+        tools:layout="@layout/fragment_my_sensor" />
+    <fragment
+        android:id="@+id/nav_bethesdaFragment"
+        android:name="ru.mirea.sidorov_m.mireaproject.BethesdaFragment"
+        android:label="fragment_bethesda"
+        tools:layout="@layout/fragment_bethesda" />
 
 </navigation>
