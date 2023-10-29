@@ -6,6 +6,12 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_fragment_new"
+        android:name="ru.mirea.sidorov_m.mireaproject.NewFragment"
+        android:label="Application list"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
         android:id="@+id/nav_home"
         android:name="ru.mirea.sidorov_m.mireaproject.ui.home.HomeFragment"
         android:label="Fallout"
@@ -56,5 +62,6 @@
         android:name="ru.mirea.sidorov_m.mireaproject.BethesdaFragment"
         android:label="fragment_bethesda"
         tools:layout="@layout/fragment_bethesda" />
+
 
 </navigation>
