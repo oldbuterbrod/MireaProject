@@ -3,8 +3,12 @@ package ru.mirea.sidorov_m.mireaproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.List;
 import java.util.Objects;
 
 import ru.mirea.sidorov_m.mireaproject.databinding.ActivityMain2Binding;
@@ -26,13 +31,24 @@ public class MainActivity2 extends AppCompatActivity {
     private ActivityMain2Binding binding;
     // START declare_auth
     private FirebaseAuth mAuth;
-
+    private boolean hasUserAcceptedWarning = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mAuth = FirebaseAuth.getInstance();
+
+        // Проверка согласия пользователя
+        if (!hasUserAcceptedWarning) {
+            //showWarningDialog();
+        }
+        binding = ActivityMain2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        mAuth = FirebaseAuth.getInstance();
+
+        String AndroidID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+
 
         binding.signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +84,12 @@ public class MainActivity2 extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+
+        if (anyDeskCheck()){
+            showWarningDialog();
+        }
+
+
     }
 
     // [END on_start_check_user]
@@ -177,4 +199,42 @@ public class MainActivity2 extends AppCompatActivity {
                     }
                 });
     }
+
+    private void showWarningDialog() {
+        AlertDialog.Builder Warning = new AlertDialog.Builder(this);
+        Warning.setTitle("Предупреждение");
+        Warning.setMessage("AnyDesk может использоваться хакерами для кражи данных.");
+
+
+        Warning.setNegativeButton("Закрыть приложение", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//
+                finish();
+                System.exit(0);
+            }
+        });
+
+
+
+        Warning.show();
+        //System.exit(0);
+    }
+
+    private boolean anyDeskCheck() {
+
+        List<PackageInfo> installedPacks = getPackageManager().getInstalledPackages(0);
+        for (int i = 0; i < installedPacks.size(); i++) {
+            PackageInfo p = installedPacks.get(i);
+            if(Objects.equals(p.packageName, "com.anydesk.anydeskandroid"))
+            {
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+
+
 }
